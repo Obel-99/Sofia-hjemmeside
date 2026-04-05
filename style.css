@@ -903,3 +903,12 @@ footer, footer * {
         gap: 12px;
     }
 }
+
+/* =========================
+   HEADER RESPONSIVE FIX
+========================= */
+@media(max-width:900px){
+    .site-header {
+        position: static; /* Header scroller med siden på mobil */
+    }
+}
