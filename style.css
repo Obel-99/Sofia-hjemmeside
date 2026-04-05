@@ -874,3 +874,32 @@ footer, footer * {
     font-family: Times, serif;
 }
 
+
+@media(max-width:900px){
+    /* Header menu på mobil */
+    .main-nav li,
+    .main-nav a {
+        white-space: normal;
+    }
+
+    .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    /* Typiske problemstillinger rubrikker på mobil */
+    .themes {
+        grid-template-columns: 1fr;
+    }
+
+    .themes-list ul {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+}
