@@ -216,7 +216,7 @@ p{
     border: none;
     border-radius: 0;
     box-shadow: 0 6px 22px rgba(0,0,0,0.12);
-    font-style: Arial, serif;
+    font-family: Times, serif;
     font-weight: 700;
     text-align: center;
     z-index: 1;
