@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kontakt – Sofia Santana Christensen</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="header-inner">
+        <div class="branding">
+            <a href="index.html">Psykolog Sofia Santana Christensen</a>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="priser.html">Priser & Praktisk</a></li>
+                <li><a href="om.html">Om</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="kontakt.html" class="active">Kontakt</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="contact-page">
+        <div class="contact-grid">
+            <div class="contact-left">
+                <div class="contact-text">
+                    <h1>Kontakt</h1>
+
+                    <p>Du er altid velkommen til at tage kontakt.</p>
+
+                    <p><strong>Telefon:</strong> <a href="tel:42166706">42166706</a></p>
+                    <p><strong>Email:</strong> <a href="mailto:tobiasgabrielsen@proton.me">tobiasgabrielsen@proton.me</a></p>
+
+                    <p>Så vender jeg tilbage hurtigst muligt.</p>
+                </div>
+
+                <div class="contact-form-section">
+                    <h2>Book en gratis forsamtale</h2>
+                    <p>Udfyld formularen, så kontakter jeg dig hurtigt på mail.</p>
+
+                    <form class="contact-form" id="contact-form">
+    <label for="name">Navn</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="message">Hvad handler det om?</label>
+    <textarea id="message" name="message" rows="5" required></textarea>
+
+    <button type="submit" class="btn">Send forespørgsel</button>
+
+    <!-- Besked vises her -->
+    <div id="form-message" style="margin-top:10px; color:green;"></div>
+</form>
+
+<script>
+const form = document.getElementById('contact-form');
+const messageDiv = document.getElementById('form-message');
+
+form.addEventListener('submit', async (e) => {
+    e.preventDefault(); // Stopper siden i at reloade
+
+    const formData = new FormData(form);
+
+    const response = await fetch('https://formspree.io/f/mlgoppvn', { // <-- SKIFT til din egen Formspree URL
+        method: 'POST',
+        body: formData,
+        headers: {
+            'Accept': 'application/json'
+        }
+    });
+
+    if (response.ok) {
+        messageDiv.textContent = "Tak for din besked! Jeg vender tilbage hurtigst muligt.";
+        form.reset(); // tømmer formularen
+    } else {
+        messageDiv.textContent = "Der opstod en fejl. Prøv igen.";
+        messageDiv.style.color = "red";
+    }
+});
+</script>
+                </div>
+            </div>
+
+            <!-- Billede -->
+            <div class="contact-image">
+                <img src="images/Headshot2.jpg" alt="Headshot af Sofia Santana Christensen">
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>Adresse</h3>
+            <p>Kiplings Allé 42<br>Søborg, 2860</p>
+            <p>600 m fra Vangede station</p>
+        </div>
+        <div class="footer-section">
+            <h3>Kontakt mig</h3>
+            <p><strong>Tlf:</strong> <a href="tel:42166706">42166706</a></p>
+            <p><strong>Email:</strong> <a href="mailto:sofia.s.christensen@hotmail.com">sofia.s.christensen@hotmail.com</a></p>
+            <p><strong>CVR:</strong> 31838258</p>
+        </div>
+        <div class="footer-section">
+            <h3>Gode links</h3>
+            <a href="priser.html">Priser & Praktisk</a>
+            <a href="om.html">Om mig</a>
+            <a href="faq.html">Ofte stillede spørgsmål</a>
+            <a href="kontakt.html">Book tid</a>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        © 2026 Sofia Santana Christensen – Alle rettigheder forbeholdes
+    </div>
+</footer>
+
+<button class="floating-chat-btn" onclick="window.location.href='kontakt.html'">Book<br>Samtale</button>
+
+</body>
+</html>
