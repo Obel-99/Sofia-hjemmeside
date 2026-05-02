@@ -51,15 +51,28 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     const tooltipItems = document.querySelectorAll('.themes-list li[data-tooltip]');
+    let touchHandled = false;
+
+    const toggleTooltip = function(item, event) {
+        const isActive = item.classList.contains('active');
+        tooltipItems.forEach(i => i.classList.remove('active'));
+        if (!isActive) {
+            item.classList.add('active');
+        }
+        event.stopPropagation();
+    };
 
     tooltipItems.forEach(item => {
         item.addEventListener('click', function(event) {
-            const isActive = item.classList.contains('active');
-            tooltipItems.forEach(i => i.classList.remove('active'));
-            if (!isActive) {
-                item.classList.add('active');
+            if (touchHandled) {
+                touchHandled = false;
+                return;
             }
-            event.stopPropagation();
+            toggleTooltip(item, event);
+        });
+        item.addEventListener('touchend', function(event) {
+            touchHandled = true;
+            toggleTooltip(item, event);
         });
     });
 

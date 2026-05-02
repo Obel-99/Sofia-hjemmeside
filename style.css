@@ -389,7 +389,7 @@ p{
     min-height:auto;
     line-height:1.4;
     position:relative;
-    cursor:default;
+    cursor:pointer;
     z-index: 1;
     font-size: 15px;
 }
@@ -412,13 +412,16 @@ p{
     border-radius: 6px;
     font-size: 13px;
     line-height: 1.3;
-    white-space: nowrap;
+    white-space: normal;
+    max-width: 220px;
+    word-wrap: break-word;
     pointer-events: none;
     transition: opacity 0.2s, transform 0.2s;
     z-index: 10;
 }
 
-.themes-list li:hover::after {
+.themes-list li:hover::after,
+.themes-list li.active::after {
     opacity: 1;
     visibility: visible;
     transform: translateX(-50%) translateY(6px);
@@ -430,13 +433,6 @@ p{
     transform:translateX(5px);
     background:#e8d8bd;
     z-index: 50;
-}
-
-.themes-list li.active::after {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(-50%) translateY(6px);
-    z-index: 250;
 }
 
 /* Removed white-space: nowrap for better mobile responsiveness */
