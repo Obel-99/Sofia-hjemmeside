@@ -1081,10 +1081,6 @@ footer, footer * {
         text-align: center;
     }
 
-    main {
-        padding-top: 110px;
-    }
-
     /* BASE TYPOGRAPHY */
     html {
         font-size: 14px;
@@ -1111,7 +1107,7 @@ footer, footer * {
 
     /* MAIN PADDING */
     main {
-        padding: 24px 12px;
+        padding: 120px 12px 24px;
     }
 
     section {
