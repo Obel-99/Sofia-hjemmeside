@@ -425,10 +425,18 @@ p{
     z-index: 250;
 }
 
-.themes-list li:hover{
+.themes-list li:hover,
+.themes-list li.active {
     transform:translateX(5px);
     background:#e8d8bd;
     z-index: 50;
+}
+
+.themes-list li.active::after {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(6px);
+    z-index: 250;
 }
 
 /* Removed white-space: nowrap for better mobile responsiveness */

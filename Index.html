@@ -49,6 +49,23 @@ document.addEventListener('DOMContentLoaded', function() {
             hamburger.classList.remove('active');
         });
     });
+
+    const tooltipItems = document.querySelectorAll('.themes-list li[data-tooltip]');
+
+    tooltipItems.forEach(item => {
+        item.addEventListener('click', function(event) {
+            const isActive = item.classList.contains('active');
+            tooltipItems.forEach(i => i.classList.remove('active'));
+            if (!isActive) {
+                item.classList.add('active');
+            }
+            event.stopPropagation();
+        });
+    });
+
+    document.addEventListener('click', function() {
+        tooltipItems.forEach(i => i.classList.remove('active'));
+    });
 });
 </script>
 
