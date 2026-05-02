@@ -809,11 +809,12 @@ footer, footer * {
     /* Mobile hero image */
     .mobile-hero-image {
         display: block;
-        width: 100%;
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
         height: 320px;
         object-fit: cover;
         object-position: center 30%;
-        margin-bottom: 15px;
+        margin-bottom: 0;
     }
 
     .hero-right {
@@ -1043,10 +1044,10 @@ footer, footer * {
 
     .header-inner {
         padding: 8px 12px;
-        gap: 8px;
+        gap: 4px;
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: flex-start;
     }
 
     .branding {
@@ -1056,7 +1057,7 @@ footer, footer * {
     }
 
     .branding a {
-        font-size: 11px;
+        font-size: 9px;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -1065,6 +1066,7 @@ footer, footer * {
     /* Show hamburger menu on mobile */
     .hamburger-menu {
         display: flex;
+        margin-left: auto;
     }
 
     .main-nav {
@@ -1138,7 +1140,7 @@ footer, footer * {
 
     /* MAIN PADDING */
     main {
-        padding: 120px 12px 24px;
+        padding: 120px 0 24px;
     }
 
     section {
@@ -1153,7 +1155,8 @@ footer, footer * {
 
     .hero-left h1 {
         font-size: 32px;
-        margin-bottom: 16px;
+        margin-bottom: 18px;
+        margin-top: 0;
     }
 
     .hero-left {
