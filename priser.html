@@ -14,7 +14,12 @@
         <div class="branding">
             <a href="index.html">Psykolog Sofia Santana Christensen</a>
         </div>
-        <nav class="main-nav">
+        <button class="hamburger-menu" id="hamburger-menu" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav class="main-nav" id="main-nav">
             <ul>
                 <li><a href="priser.html" class="active">Priser & Praktisk</a></li>
                 <li><a href="om.html">Om</a></li>
@@ -24,6 +29,26 @@
         </nav>
     </div>
 </header>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.getElementById('hamburger-menu');
+    const nav = document.getElementById('main-nav');
+
+    hamburger.addEventListener('click', function() {
+        nav.classList.toggle('active');
+        hamburger.classList.toggle('active');
+    });
+
+    // Luk menu når man klikker på et link
+    nav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function() {
+            nav.classList.remove('active');
+            hamburger.classList.remove('active');
+        });
+    });
+});
+</script>
 
 <main>
     <section class="prices-page">

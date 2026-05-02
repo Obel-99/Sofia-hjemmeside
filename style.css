@@ -697,6 +697,42 @@ footer, footer * {
 }
 
 /* =========================
+   HAMBURGER MENU (MOBILE ONLY)
+========================= */
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    gap: 5px;
+    z-index: 1001;
+}
+
+.hamburger-menu span {
+    width: 25px;
+    height: 3px;
+    background: #3b2c22;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+/* Hamburger animation when active */
+.hamburger-menu.active span:nth-child(1) {
+    transform: rotate(45deg) translate(10px, 10px);
+}
+
+.hamburger-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* =========================
    RESPONSIVE - TABLET & SMALL DESKTOP (900px and below)
 ========================= */
 @media(max-width:900px){
@@ -974,46 +1010,74 @@ footer, footer * {
     /* HEADER */
     .site-header {
         position: sticky;
+        top: 0;
+        z-index: 1000;
     }
 
     .header-inner {
         padding: 12px 16px;
         gap: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
 
     .branding {
-        width: 100%;
+        width: auto;
+        flex: 1;
     }
 
     .branding a {
         font-size: 14px;
     }
 
+    /* Show hamburger menu on mobile */
+    .hamburger-menu {
+        display: flex;
+    }
+
     .main-nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(255, 253, 249, 0.98);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid #eee2d3;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        z-index: 999;
         width: 100%;
+    }
+
+    .main-nav.active {
+        max-height: 300px;
     }
 
     .main-nav ul {
         flex-direction: column;
-        gap: 6px;
+        gap: 0;
         width: 100%;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
-    }
-
-    .main-nav ul.active {
-        max-height: 200px;
+        padding: 16px 0;
+        list-style: none;
     }
 
     .main-nav li {
         width: 100%;
         border-top: 1px solid #eee2d3;
-        padding: 8px 0;
+        padding: 0;
+        margin: 0;
+    }
+
+    .main-nav li:first-child {
+        border-top: none;
     }
 
     .main-nav a {
         font-size: 13px;
+        display: block;
+        padding: 12px 16px;
     }
 
     /* BASE TYPOGRAPHY */
@@ -1128,19 +1192,30 @@ footer, footer * {
 
     /* THEMES */
     .themes {
+        grid-template-columns: 1fr;
+        display: grid;
         gap: 16px;
         margin-bottom: 40px;
     }
 
     .themes h2 {
+        grid-column: 1;
+        grid-row: auto;
         font-size: 22px;
         margin-bottom: 8px;
     }
 
     .themes-intro {
+        grid-column: 1;
+        grid-row: auto;
         font-size: 14px;
         line-height: 1.6;
-        margin-bottom: 16px;
+        margin-bottom: 12px;
+    }
+
+    .themes-list {
+        grid-column: 1;
+        grid-row: auto;
     }
 
     .themes-list ul {
