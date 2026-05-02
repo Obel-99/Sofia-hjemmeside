@@ -238,7 +238,7 @@ p{
     opacity: 1;
     transform: none;
     pointer-events: auto;
-}_
+}
 /* CITAT */
 .quote{
     margin-top:25px;
@@ -1042,13 +1042,15 @@ footer, footer * {
     }
 
     .header-inner {
+        height: 54px; /* 🔥 samme som din menu top */
         padding: 8px 12px;
         gap: 8px;
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: center;
+        position: relative;
     }
-
+    
     .branding {
         width: auto;
         flex-shrink: 1;
@@ -1064,8 +1066,12 @@ footer, footer * {
 
     /* Show hamburger menu on mobile */
     .hamburger-menu {
+        height: 100%;
         display: flex;
+        justify-content: center;
+        margin-left: auto;
     }
+    
 
     .main-nav {
         position: fixed;
@@ -1138,7 +1144,7 @@ footer, footer * {
 
     /* MAIN PADDING */
     main {
-        padding: 120px 12px 24px;
+        padding: 70px 12px 24px;
     }
 
     section {
