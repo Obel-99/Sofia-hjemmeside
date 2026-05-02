@@ -51,34 +51,25 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     const tooltipItems = document.querySelectorAll('.themes-list li[data-tooltip]');
-    let touchHandled = false;
+    const isTouchDevice = ('ontouchstart' in window) || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
 
-    const toggleTooltip = function(item, event) {
-        const isActive = item.classList.contains('active');
-        tooltipItems.forEach(i => i.classList.remove('active'));
-        if (!isActive) {
-            item.classList.add('active');
-        }
-        event.stopPropagation();
-    };
-
-    tooltipItems.forEach(item => {
-        item.addEventListener('click', function(event) {
-            if (touchHandled) {
-                touchHandled = false;
-                return;
-            }
-            toggleTooltip(item, event);
+    if (isTouchDevice) {
+        tooltipItems.forEach(item => {
+            item.addEventListener('touchend', function(event) {
+                const isActive = item.classList.contains('active');
+                tooltipItems.forEach(i => i.classList.remove('active'));
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+                event.preventDefault();
+                event.stopPropagation();
+            });
         });
-        item.addEventListener('touchend', function(event) {
-            touchHandled = true;
-            toggleTooltip(item, event);
-        });
-    });
 
-    document.addEventListener('click', function() {
-        tooltipItems.forEach(i => i.classList.remove('active'));
-    });
+        document.addEventListener('touchend', function() {
+            tooltipItems.forEach(i => i.classList.remove('active'));
+        });
+    }
 });
 </script>
 
