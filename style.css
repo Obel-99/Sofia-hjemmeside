@@ -874,7 +874,11 @@ footer, footer * {
     }
 
     .themes-list li::after {
-        display: none;
+        display: block;
+    }
+
+    .themes-list li.active::after {
+        display: block;
     }
 
     /* GRID LAYOUTS (PRICES, ABOUT, CONTACT) */
