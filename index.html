@@ -50,6 +50,17 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // Scroll reveal
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal, .reveal-up').forEach(el => revealObserver.observe(el));
+
     const tooltipItems = document.querySelectorAll('.themes-list li[data-tooltip]');
     const isTouchDevice = ('ontouchstart' in window) || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
 
@@ -88,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         <p>Sammen arbejder vi med det, der fylder hos dig, med fokus på at skabe klarhed, styrke dine ressourcer og finde nye måder at forstå og håndtere dine udfordringer på.</p>
 
-        <p>Du kan starte med en gratis telefonisk forsamtale (10–15 min.), så du kan vurdere om et forløb med mig føles rigtigt.</p>
+        <p><strong>Du kan starte med en gratis telefonisk forsamtale (10–15 min.), så du kan vurdere om et forløb med mig føles rigtigt.</strong></p>
 
         <div class="hero-actions">
             <a href="priser.html" class="btn">Priser & Praktisk</a>
@@ -101,21 +112,25 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
 </section>
 
-<div class="scroll-banner" id="scrollBanner">"Intentionalitet, taknemmelighed og mod er nogle af de mest effektive værktøjer vi har på rejsen mod at leve det liv vi drømmer om" - Sofia S. Christensen</div>
+<div class="scroll-banner" id="scrollBanner">
+    <span class="quote-text">"Intentionalitet, taknemmelighed og mod er nogle af de mest effektive værktøjer vi har på rejsen mod at leve det liv vi drømmer om"</span>
+    <hr class="quote-divider">
+    <span class="quote-author">– Sofia S. Christensen</span>
+</div>
 
 <!-- JEG TILBYDER -->
-<section class="offerings">
+<section class="offerings reveal">
     <h2>Jeg tilbyder</h2>
     <div class="offerings-grid">
-        <div class="offering-item">
+        <div class="offering-item reveal-up" style="transition-delay:0s">
             <h3>Terapi</h3>
             <p>Til dig der ønsker at arbejde med dine udfordringer, tanker og følelser i dybden – en sikker ramme hvor du kan tale frit.</p>
         </div>
-        <div class="offering-item">
+        <div class="offering-item reveal-up" style="transition-delay:0.15s">
             <h3>Personlig udvikling</h3>
             <p>Til dig der gerne vil blive bedre bekendt med dig selv, finde dine værdier og arbejde mod dine mål på en målrettet måde.</p>
         </div>
-        <div class="offering-item">
+        <div class="offering-item reveal-up" style="transition-delay:0.3s">
             <h3>Teamudvikling</h3>
             <p>Til organisationen der ønsker at styrke samarbejde, kommunikation og arbejdsmiljøet blandt ledelse eller medarbejdere.</p>
         </div>
@@ -123,13 +138,12 @@ document.addEventListener('DOMContentLoaded', function() {
 </section>
 
 <!-- PROBLEMSTILLINGER -->
-<section class="themes">
+<section class="themes reveal">
     <h2>Typiske problemstillinger</h2>
     <div class="themes-intro">
         <p>Jeg møder mennesker, som på forskellige måder har det svært i livet. Nogle kæmper med stress, angst, sorg eller depression, mens andre bare mærker, at noget ikke føles rigtigt længere. Mange føler sig overvældede, alene eller kørt fast og savner ro, klarhed og en følelse af retning.</p>
         <p>Hos mig er der plads til det hele. Du behøver ikke have styr på dine tanker eller kunne forklare præcis, hvad der er galt, før du søger hjælp. Sammen tager vi udgangspunkt i det, du står i lige nu, og finder frem til det, der giver mening for dig.</p>
-        <p>Jeg arbejder med psykologiske metoder, der er fagligt funderede og samtidig menneskelige og nærværende. Vi ser på, hvad der påvirker dig følelsesmæssigt, og hvordan du kan forstå og håndtere det på en måde, der hjælper dig i hverdagen.</p>
-        <p>Jeg lægger vægt på at møde dig med respekt, ærlighed og varme. Mit mål er at skabe et trygt rum, hvor du kan finde mere styrke, ro og mulighed for forandring i dit eget tempo.</p>
+<p>Jeg lægger vægt på at møde dig med respekt, ærlighed og varme. Mit mål er at skabe et trygt rum, hvor du kan finde mere styrke, ro og mulighed for forandring i dit eget tempo.</p>
     </div>
     <div class="themes-list">
         <ul>
@@ -148,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </section>
 
 <!-- INTRO -->
-<section class="about">
+<section class="about reveal">
     <h2>Evidensbaseret støtte i svære livssituationer</h2>
 
     <p>Jeg tager altid udgangspunkt i din situation og arbejder med metoder fra blandt andet ACT, MCT, CBT og den løsningsfokuserede tilgang. Det betyder, at vi sammen finder en måde at arbejde på, som giver mening for dig og det, du står i lige nu.</p>
@@ -172,9 +186,9 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
         <div class="footer-section">
             <h3>Kontakt mig</h3>
-            <p><strong>Tlf:</strong> <a href="tel:42166706">42166706</a></p>
+            <p><strong>Tlf:</strong> <a href="tel:24223274">24223274</a></p>
             <p><strong>Email:</strong> <a href="mailto:sofia.s.christensen@hotmail.com">sofia.s.christensen@hotmail.com</a></p>
-            <p><strong>CVR:</strong> 31838258</p>
+            <p><strong>CVR:</strong> 46438191</p>
         </div>
         <div class="footer-section">
             <h3>Gode links</h3>
