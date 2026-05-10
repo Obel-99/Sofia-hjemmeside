@@ -69,6 +69,18 @@ p{
     line-height:1.75;
 }
 
+.hero-left p,
+.themes-intro p,
+.about p {
+    margin-bottom: 18px;
+}
+
+.hero-left p:last-of-type,
+.themes-intro p:last-of-type,
+.about p:last-of-type {
+    margin-bottom: 0;
+}
+
 /* =========================
    HEADER
 ========================= */
