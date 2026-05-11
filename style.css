@@ -42,8 +42,8 @@ h1{
     letter-spacing:0.02em;
 }
 
-.hero-left h1 { 
-    font-size:68px;
+.hero-left h1 {
+    font-size:48px;
     color: #1a2847;
     line-height:1.05;
 }
@@ -253,29 +253,23 @@ p{
 }
 
 .scroll-banner {
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin: 120px -50vw 120px;
-    width: 100vw;
-    padding: 36px 20px;
+    margin: 100px auto;
+    max-width: 1100px;
+    padding: 50px 60px;
     background: #ffffff;
     color: #3b2c22;
-    border: none;
-    border-radius: 0;
-    box-shadow: 0 6px 22px rgba(0,0,0,0.12);
+    border-radius: 12px;
+    box-shadow: 0 6px 22px rgba(0,0,0,0.10);
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     text-align: center;
-    z-index: 1;
-    min-height: 150px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 16px;
     letter-spacing: 0.03em;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
 }
 
 .scroll-banner.visible {
@@ -337,6 +331,15 @@ p{
     padding: 28px;
     border-radius: 10px;
     border: 1px solid #eee2d3;
+}
+
+.offering-icon {
+    display: block;
+    width: 36px;
+    height: 36px;
+    color: #1a2847;
+    stroke: #1a2847;
+    margin-bottom: 14px;
 }
 
 .offering-item h3 {
@@ -904,10 +907,9 @@ footer, footer * {
 
     /* SCROLL BANNER */
     .scroll-banner {
-        margin: 80px -50vw 80px;
-        padding: 20px 16px;
+        margin: 80px auto;
+        padding: 36px 30px;
         font-size: 1.1rem;
-        min-height: 120px;
     }
 
     /* OFFERINGS SECTION */
@@ -1266,10 +1268,9 @@ footer, footer * {
     }
 
     .scroll-banner {
-        margin: 60px -50vw 60px;
-        padding: 16px 12px;
+        margin: 60px auto;
+        padding: 30px 24px;
         font-size: 1rem;
-        min-height: 100px;
         letter-spacing: 0.02em;
     }
 
@@ -1578,10 +1579,9 @@ footer, footer * {
     }
 
     .scroll-banner {
-        margin: 40px -50vw 40px;
-        padding: 12px 10px;
+        margin: 40px auto;
+        padding: 28px 20px;
         font-size: 0.95rem;
-        min-height: 80px;
     }
 
     .btn {
@@ -1952,10 +1952,9 @@ footer, footer * {
 
     /* SCROLL BANNER */
     .scroll-banner {
-        margin: 20px -50vw 20px;
-        padding: 12px 10px;
+        margin: 24px auto;
+        padding: 24px 16px;
         font-size: 0.9rem;
-        min-height: 60px;
     }
 
     /* OFFERINGS */

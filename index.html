@@ -6,6 +6,7 @@
     <title>Sofia Santana Christensen – Psykolog i Rødovre</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -49,6 +50,8 @@ document.addEventListener('DOMContentLoaded', function() {
             hamburger.classList.remove('active');
         });
     });
+
+    lucide.createIcons();
 
     // Scroll reveal
     const revealObserver = new IntersectionObserver((entries) => {
@@ -123,14 +126,17 @@ document.addEventListener('DOMContentLoaded', function() {
     <h2>Jeg tilbyder</h2>
     <div class="offerings-grid">
         <div class="offering-item reveal-up" style="transition-delay:0s">
+            <i data-lucide="book-heart" class="offering-icon"></i>
             <h3>Terapi</h3>
             <p>Til dig der ønsker at arbejde med dine udfordringer, tanker og følelser i dybden – en sikker ramme hvor du kan tale frit.</p>
         </div>
         <div class="offering-item reveal-up" style="transition-delay:0.15s">
+            <i data-lucide="star" class="offering-icon"></i>
             <h3>Personlig udvikling</h3>
             <p>Til dig der gerne vil blive bedre bekendt med dig selv, finde dine værdier og arbejde mod dine mål på en målrettet måde.</p>
         </div>
         <div class="offering-item reveal-up" style="transition-delay:0.3s">
+            <i data-lucide="users" class="offering-icon"></i>
             <h3>Teamudvikling</h3>
             <p>Til organisationen der ønsker at styrke samarbejde, kommunikation og arbejdsmiljøet blandt ledelse eller medarbejdere.</p>
         </div>
