@@ -11,7 +11,7 @@
    BASE
 ========================= */
 body{
-    font-family:Arial, sans-serif;
+    font-family:'Montserrat', sans-serif;
     line-height:1.8;
     color:#3b2c22;
     background:#f7f2ea;
@@ -29,7 +29,7 @@ section{
 
 /* TYPOGRAFI */
 h1, h2, h3{
-    font-family: Times, serif;
+    font-family: 'Montserrat', sans-serif;
     letter-spacing:0.5px;
     color: #1a2847;
 }
@@ -106,7 +106,7 @@ p{
 
 /* Logo */
 .branding a{
-    font-family: Times, serif;
+    font-family: 'Montserrat', sans-serif;
     font-size:18px;
     letter-spacing:0.5px;
     color:#3b2c22;
@@ -219,7 +219,7 @@ p{
     border-left: 4px solid #c8a97e;
     border-radius: 8px;
     color: #5b3f2b;
-    font-family: Arial, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     line-height: 1.4;
     position: relative;
     top: -12px;
@@ -264,7 +264,7 @@ p{
     border: none;
     border-radius: 0;
     box-shadow: 0 6px 22px rgba(0,0,0,0.12);
-    font-family: Times, serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     text-align: center;
     z-index: 1;
@@ -306,7 +306,7 @@ p{
     margin-top:25px;
     padding-left:15px;
     border-left:3px solid #c8a97e;
-    font-family: Arial, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     color:#6b4f3b;
 }
 
@@ -672,7 +672,7 @@ p{
     transition: all 0.3s ease;
     z-index: 98;
     padding: 12px;
-    font-family: Arial, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     line-height: 1.2;
 }
 
@@ -1654,7 +1654,7 @@ footer, footer * {
     border:1px solid #ddd2c1;
     border-radius: 8px;
     font-size: 14px;
-    font-family: Arial, sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .contact-form button.btn {
@@ -1758,7 +1758,7 @@ footer, footer * {
 
 .faq-page h1,
 .faq-item h3 {
-    font-family: Times, serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 
