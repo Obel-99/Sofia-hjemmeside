@@ -184,30 +184,32 @@ p{
 
 .hero-title {
     grid-column: 1 / -1;
-    font-size: 56px;
+    font-size: clamp(28px, 5.7vw, 66px);
     font-weight: 700;
     color: #1a2847;
     line-height: 1.08;
     margin-bottom: 16px;
+    white-space: nowrap;
 }
 
 .hero-subtitle {
     display: block;
-    font-size: 34px;
+    font-size: 0.52em;
     font-style: italic;
     font-weight: 500;
-    margin-top: 10px;
+    margin-top: 0.25em;
     color: #1a2847;
+    white-space: nowrap;
 }
 
 .hero-subtitle::before {
     content: '';
     display: inline-block;
-    width: 48px;
+    width: 1.4em;
     height: 2px;
     background: #1a2847;
     vertical-align: middle;
-    margin-right: 14px;
+    margin-right: 0.5em;
     opacity: 0.55;
 }
 
@@ -893,11 +895,7 @@ footer, footer * {
     }
 
     .hero-title {
-        font-size: 42px;
-        margin-bottom: 20px;
-    }
-    .hero-subtitle {
-        font-size: 26px;
+        margin-bottom: 16px;
     }
 
     .hero-right {
@@ -1265,15 +1263,12 @@ footer, footer * {
     }
 
     .hero-title {
-        font-size: 30px;
-        margin-bottom: 16px;
+        font-size: clamp(20px, 5.7vw, 66px);
+        white-space: normal;
+        margin-bottom: 12px;
     }
     .hero-subtitle {
-        font-size: 20px;
-    }
-    .hero-subtitle::before {
-        width: 32px;
-        margin-right: 10px;
+        white-space: normal;
     }
 
     .hero-left {
@@ -1592,15 +1587,7 @@ footer, footer * {
 
     /* HERO */
     .hero-title {
-        font-size: 24px;
-        margin-bottom: 12px;
-    }
-    .hero-subtitle {
-        font-size: 17px;
-    }
-    .hero-subtitle::before {
-        width: 24px;
-        margin-right: 8px;
+        margin-bottom: 10px;
     }
 
     .hero-right {
@@ -1960,11 +1947,7 @@ footer, footer * {
     }
 
     .hero-title {
-        font-size: 20px;
         margin-bottom: 8px;
-    }
-    .hero-subtitle {
-        font-size: 15px;
     }
 
     .hero-right {
