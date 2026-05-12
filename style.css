@@ -42,11 +42,6 @@ h1{
     letter-spacing:0.02em;
 }
 
-.hero-left h1 {
-    font-size:48px;
-    color: #1a2847;
-    line-height:1.05;
-}
 
 h2,
 h3{
@@ -183,19 +178,41 @@ p{
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:70px;
-    align-items:center;
+    align-items:start;
     margin-bottom: 0;
+}
+
+.hero-title {
+    grid-column: 1 / -1;
+    font-size: 56px;
+    font-weight: 700;
+    color: #1a2847;
+    line-height: 1.08;
+    margin-bottom: 16px;
+}
+
+.hero-subtitle {
+    display: block;
+    font-size: 34px;
+    font-style: italic;
+    font-weight: 500;
+    margin-top: 10px;
+    color: #1a2847;
+}
+
+.hero-subtitle::before {
+    content: '';
+    display: inline-block;
+    width: 48px;
+    height: 2px;
+    background: #1a2847;
+    vertical-align: middle;
+    margin-right: 14px;
+    opacity: 0.55;
 }
 
 .hero-left{
     animation:fadeUp 0.8s ease;
-    max-width: 560px;
-}
-
-.hero-left h1 {
-    margin-bottom: 24px;
-    line-height: 1.08;
-    max-width: 520px;
 }
 
 .hero-right{
@@ -875,9 +892,12 @@ footer, footer * {
         margin-bottom: 40px;
     }
 
-    .hero-left h1 {
-        font-size: 48px;
+    .hero-title {
+        font-size: 42px;
         margin-bottom: 20px;
+    }
+    .hero-subtitle {
+        font-size: 26px;
     }
 
     .hero-right {
@@ -1244,9 +1264,16 @@ footer, footer * {
         margin-bottom: 24px;
     }
 
-    .hero-left h1 {
-        font-size: 32px;
+    .hero-title {
+        font-size: 30px;
         margin-bottom: 16px;
+    }
+    .hero-subtitle {
+        font-size: 20px;
+    }
+    .hero-subtitle::before {
+        width: 32px;
+        margin-right: 10px;
     }
 
     .hero-left {
@@ -1564,9 +1591,16 @@ footer, footer * {
     }
 
     /* HERO */
-    .hero-left h1 {
-        font-size: 26px;
+    .hero-title {
+        font-size: 24px;
         margin-bottom: 12px;
+    }
+    .hero-subtitle {
+        font-size: 17px;
+    }
+    .hero-subtitle::before {
+        width: 24px;
+        margin-right: 8px;
     }
 
     .hero-right {
@@ -1760,10 +1794,6 @@ footer, footer * {
     border-radius: 12px;
 }
 
-.hero-left h1{
-    line-height:1.15;   /* mindre afstand mellem linjer */
-    max-width:500px;    /* tvinger pænere linjeskift */
-}
 
 
 .hero-right img{
@@ -1929,9 +1959,12 @@ footer, footer * {
         margin-bottom: 12px;
     }
 
-    .hero-left h1 {
-        font-size: 18px;
+    .hero-title {
+        font-size: 20px;
         margin-bottom: 8px;
+    }
+    .hero-subtitle {
+        font-size: 15px;
     }
 
     .hero-right {
