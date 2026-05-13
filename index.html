@@ -101,9 +101,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         <p>Jeg hedder Sofia Santana Christensen og er autoriseret psykolog fra Københavns Universitet. Jeg har klinisk erfaring med både unge og voksne med en bred variation af problemstillinger.</p>
 
-        <p>Jeg tilbyder samtaleforløb med fokus på blandt andet stress, angst, depression og parterapi. Hos mig bliver du mødt med nærvær, ro og respekt i et trygt og professionelt rum.</p>
-
-        <p>Sammen arbejder vi med det, der fylder hos dig, med fokus på at skabe klarhed, styrke dine ressourcer og finde nye måder at forstå og håndtere dine udfordringer på.</p>
+        <p>Hos mig bliver du mødt med nærvær, ro og respekt i et trygt og professionelt rum. Sammen arbejder vi med det, der fylder hos dig, med fokus på at skabe klarhed, styrke dine ressourcer og finde nye måder at forstå og håndtere dine udfordringer på.</p>
 
         <p><strong>Du kan starte med en gratis telefonisk forsamtale (10–15 min.), så du kan vurdere om et forløb med mig føles rigtigt.</strong></p>
 
@@ -242,26 +240,16 @@ document.addEventListener('DOMContentLoaded', function() {
     }, { passive: true });
 })();
 
-/* === 3D TILT ON OFFERING CARDS === */
+/* === MATCH HERO IMAGE HEIGHT TO TEXT === */
 (function () {
-    if (window.innerWidth < 900) return;
-    document.querySelectorAll('.offering-item').forEach(function (card) {
-        card.addEventListener('mousemove', function (e) {
-            var r = card.getBoundingClientRect();
-            var x = (e.clientX - r.left) / r.width - 0.5;
-            var y = (e.clientY - r.top) / r.height - 0.5;
-            card.style.transition = 'box-shadow 0.1s ease, border-color 0.1s ease';
-            card.style.transform = 'perspective(700px) rotateX(' + (-y * 8) + 'deg) rotateY(' + (x * 8) + 'deg) translateY(-6px)';
-            card.style.boxShadow = '0 20px 44px rgba(26,40,71,0.14)';
-            card.style.borderColor = '#c8a97e';
-        });
-        card.addEventListener('mouseleave', function () {
-            card.style.transition = 'transform 0.55s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.35s ease, border-color 0.35s ease';
-            card.style.transform = '';
-            card.style.boxShadow = '';
-            card.style.borderColor = '';
-        });
-    });
+    function matchHeroHeight() {
+        var left = document.querySelector('.hero-left');
+        var right = document.querySelector('.hero-right');
+        if (!left || !right || window.innerWidth < 900) return;
+        right.style.height = left.offsetHeight + 'px';
+    }
+    matchHeroHeight();
+    window.addEventListener('resize', matchHeroHeight);
 })();
 
 /* === MAGNETIC FLOATING BUTTON === */

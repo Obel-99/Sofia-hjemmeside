@@ -152,23 +152,23 @@ p{
 ========================= */
 .btn{
     display:inline-block;
-    margin-top:14px;
-    padding:4px 18px;
-    background:#e8d8bd;
+    margin-top:10px;
+    padding:5px 10px;
+    background:#dfc9a8;
     color:#3b2c22;
-    border-radius:6px;
+    border-radius:3px;
     text-decoration:none;
     font-weight:500;
-    font-size:15px;
-    transition:all .25s ease;
+    font-size:12px;
+    letter-spacing:0.07em;
+    text-transform:uppercase;
+    transition:background .2s ease;
     border:none;
     cursor:pointer;
 }
 
 .btn:hover{
-    background:#d9c3a3;
-    transform:translateY(-1px);
-    box-shadow:0 4px 12px rgba(0,0,0,0.1);
+    background:#cdb490;
 }
 
 /* =========================
@@ -180,6 +180,7 @@ p{
     gap:70px;
     align-items:start;
     margin-bottom: 0;
+    grid-template-rows: auto 1fr;
 }
 
 .hero-title {
@@ -217,7 +218,8 @@ p{
 }
 
 .hero-right{
-    height:440px;
+    height:auto;
+    min-height:400px;
     border-radius:12px;
     overflow:hidden;
     box-shadow:0 20px 50px rgba(0,0,0,0.08);
@@ -898,7 +900,8 @@ footer, footer * {
     }
 
     .hero-right {
-        height: 320px;
+        min-height: 280px;
+        height: auto;
     }
 
     /* Mobile hero image */
@@ -1275,7 +1278,8 @@ footer, footer * {
     }
 
     .hero-right {
-        height: 240px;
+        height: auto;
+        min-height: 240px;
         border-radius: 8px;
     }
 
@@ -1590,7 +1594,8 @@ footer, footer * {
     }
 
     .hero-right {
-        height: 200px;
+        height: auto;
+        min-height: 200px;
     }
 
     .hero-quote {
@@ -2037,99 +2042,56 @@ body {
     background-attachment: fixed;
 }
 
-/* ---- Enhanced buttons ---- */
-.btn {
-    padding: 12px 28px;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    border-radius: 4px;
-    background: linear-gradient(135deg, #e8d8bd 0%, #d4bfa0 100%);
-    border: 1px solid rgba(200,169,126,0.3);
-    position: relative;
-    overflow: hidden;
-}
-.btn:hover {
-    background: linear-gradient(135deg, #dcca9e 0%, #c8aa8a 100%);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(200,169,126,0.4);
+.hero-actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 18px;
 }
 
-/* ---- Section h2 gold accent line ---- */
-.offerings h2,
-.themes h2,
-.about h2 {
-    position: relative;
-    padding-top: 20px;
-}
-.offerings h2::before,
-.themes h2::before,
-.about h2::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 38px; height: 3px;
-    background: #c8a97e;
-    border-radius: 2px;
-}
-.offerings h2::before {
-    left: 50%;
-    transform: translateX(-50%);
-}
 
-/* ---- Dark dramatic quote banner ---- */
+/* ---- Quote banner ---- */
 .scroll-banner {
-    background: #1a2847;
-    box-shadow: 0 30px 80px rgba(26, 40, 71, 0.22);
+    background: transparent;
+    box-shadow: none;
     position: relative;
-    overflow: hidden;
-    padding: 70px 80px;
-    border-radius: 16px;
-    color: rgba(255,255,255,0.9) !important;
+    overflow: visible;
+    padding: 40px 0;
+    border-radius: 0;
+    color: #3b2c22 !important;
+    border: none;
+    border-top: 1px solid #ddd0bc;
+    border-bottom: 1px solid #ddd0bc;
+    text-align: center;
 }
-.scroll-banner::before {
-    content: '\201C';
-    position: absolute;
-    font-size: 38rem;
-    line-height: 0.8;
-    opacity: 0.05;
-    color: white;
-    font-family: Georgia, serif;
-    top: -40px; left: -10px;
-    pointer-events: none;
-    z-index: 0;
-}
-.scroll-banner > * { position: relative; z-index: 1; }
 .scroll-banner .quote-text {
-    color: rgba(255,255,255,0.88);
-    font-size: 1.35rem;
+    color: #5a4636;
+    font-size: 1.1rem;
     line-height: 1.8;
     font-weight: 400;
     font-style: italic;
     font-family: Georgia, 'Times New Roman', serif;
-    max-width: 820px;
+    max-width: 720px;
+    margin: 0 auto;
 }
 .scroll-banner .quote-divider {
     border-top-color: #c8a97e;
-    width: 50px;
-    opacity: 1;
+    width: 30px;
+    opacity: 0.6;
+    margin: 16px auto;
 }
 .scroll-banner .quote-author {
-    color: #c8a97e;
-    font-size: 0.88rem;
-    letter-spacing: 0.14em;
+    color: #9a8272;
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     font-weight: 600;
-    font-style: normal;
     font-family: 'Montserrat', sans-serif;
 }
 
-/* ---- Hero image warm offset frame ---- */
+/* ---- Hero image ---- */
 .hero-right {
-    box-shadow:
-        0 20px 50px rgba(0,0,0,0.10),
-        18px 18px 0 rgba(200,169,126,0.25);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.09);
 }
 
 /* ---- Reveal animation variants ---- */
@@ -2172,42 +2134,12 @@ body {
     will-change: transform;
 }
 
-/* ---- H1 gold accent (inner pages) ---- */
-.about-page h1,
-.prices-page h1,
-.contact-page h1,
-.faq-page h1 {
-    position: relative;
-    padding-top: 20px;
-}
-.about-page h1::before,
-.prices-page h1::before,
-.contact-page h1::before,
-.faq-page h1::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 38px; height: 3px;
-    background: #c8a97e;
-    border-radius: 2px;
-}
 
-/* ---- Page image warm shadow (om, priser, kontakt) ---- */
+/* ---- Page image shadow (om, priser, kontakt) ---- */
 .about-image img,
 .prices-image img,
 .contact-image img {
-    box-shadow:
-        0 20px 50px rgba(0,0,0,0.10),
-        14px 14px 0 rgba(200,169,126,0.22);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-.about-image img:hover,
-.prices-image img:hover,
-.contact-image img:hover {
-    transform: translateY(-4px);
-    box-shadow:
-        0 28px 60px rgba(0,0,0,0.13),
-        14px 14px 0 rgba(200,169,126,0.28);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.09);
 }
 
 /* ---- Price list ---- */
@@ -2287,7 +2219,7 @@ body {
     content: '+';
     font-size: 24px;
     font-weight: 300;
-    color: #c8a97e;
+    color: #9a8878;
     transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), color 0.22s ease;
     flex-shrink: 0;
     margin-left: 20px;
@@ -2296,9 +2228,10 @@ body {
 }
 .faq-page .faq-item.open h3::after {
     transform: rotate(45deg);
-    color: #1a2847;
+    color: #5a4636;
 }
-.faq-page .faq-item h3:hover { color: #c8a97e; }
+.faq-page .faq-item h3 { color: #1a1a1a; }
+.faq-page .faq-item h3:hover { color: #5a5a5a; }
 .faq-page .faq-item p {
     max-height: 0;
     overflow: hidden;
@@ -2315,49 +2248,22 @@ body {
 
 /* ---- FAQ CTA box ---- */
 .faq-cta {
-    background: linear-gradient(135deg, #1a2847 0%, #253660 100%);
-    color: white;
-    border-radius: 12px;
-    padding: 50px 60px;
+    background: #f0e8db;
+    border: 1px solid #ddd0bc;
+    border-radius: 10px;
+    padding: 40px 50px;
     text-align: center;
-    position: relative;
-    overflow: hidden;
 }
-.faq-cta::before {
-    content: '?';
-    position: absolute;
-    font-size: 20rem;
-    font-weight: 700;
-    opacity: 0.04;
-    color: white;
-    right: -20px;
-    top: -60px;
-    line-height: 1;
-    pointer-events: none;
-    font-family: 'Montserrat', sans-serif;
-}
-.faq-cta > * { position: relative; z-index: 1; }
 .faq-cta p {
-    color: rgba(255,255,255,0.85);
-    font-size: 18px;
-    margin-bottom: 20px;
-}
-.faq-cta .btn {
-    background: linear-gradient(135deg, #c8a97e 0%, #b08a60 100%);
-    color: white;
-    border-color: transparent;
-}
-.faq-cta .btn:hover {
-    background: linear-gradient(135deg, #d4b98e 0%, #c09870 100%);
-    box-shadow: 0 8px 24px rgba(200,169,126,0.45);
+    color: #5a4636;
+    font-size: 16px;
+    margin-bottom: 16px;
 }
 
 /* ---- Mobile / small screen overrides ---- */
 @media (max-width: 768px) {
-    .scroll-banner { padding: 48px 32px; }
-    .scroll-banner .quote-text { font-size: 1.1rem; }
-    .scroll-banner::before { font-size: 18rem; top: -20px; }
+    .scroll-banner { padding: 28px 16px; }
+    .scroll-banner .quote-text { font-size: 1rem; }
     .hero-right { box-shadow: 0 12px 30px rgba(0,0,0,0.10); }
     body { background-attachment: scroll; }
-    .btn { padding: 10px 22px; }
 }
