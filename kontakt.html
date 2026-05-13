@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <main>
     <section class="contact-page">
         <div class="contact-grid">
-            <div class="contact-left">
+            <div class="contact-left reveal-left">
                 <div class="contact-text">
                     <h1>Kontakt</h1>
 
@@ -115,7 +115,7 @@ form.addEventListener('submit', async (e) => {
             </div>
 
             <!-- Billede -->
-            <div class="contact-image">
+            <div class="contact-image reveal-right">
                 <img src="images/Headshot2.jpg" alt="Headshot af Sofia Santana Christensen">
             </div>
         </div>
@@ -125,10 +125,12 @@ form.addEventListener('submit', async (e) => {
 <footer>
     <div class="footer-content">
         <div class="footer-section">
-            <h3>Adresse</h3>
-            <p>Kiplings Allé 42<br>Søborg, 2860</p>
+            <h3>Klinikker</h3>
+            <p><strong>Rødovre</strong><br>Kiplings Allé 42<br>Søborg, 2860</p>
             <p>600 m fra Vangede station</p>
             <a href="https://www.google.com/maps/dir/?api=1&destination=Kiplings+All%C3%A9+42,+2860+S%C3%B8borg,+Danmark" target="_blank" rel="noopener" class="find-vej-link">Find Vej</a>
+            <p style="margin-top: 18px"><strong>Næstved</strong><br>Blegdamsvej 9<br>2100 København Ø</p>
+            <a href="https://www.google.com/maps/dir/?api=1&destination=Blegdamsvej+9,+2100+K%C3%B8benhavn+%C3%98,+Danmark" target="_blank" rel="noopener" class="find-vej-link">Find Vej</a>
         </div>
         <div class="footer-section">
             <h3>Kontakt mig</h3>
@@ -150,6 +152,12 @@ form.addEventListener('submit', async (e) => {
 </footer>
 
 <button class="floating-chat-btn" onclick="window.location.href='kontakt.html'">Book<br>Samtale</button>
+
+<script>
+(function(){var b=document.createElement('div');b.style.cssText='position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,#1a2847,#c8a97e);z-index:9999;pointer-events:none;transition:width 0.08s linear;';document.body.insertBefore(b,document.body.firstChild);window.addEventListener('scroll',function(){b.style.width=Math.min(window.scrollY/(document.documentElement.scrollHeight-window.innerHeight)*100,100)+'%';},{passive:true});})();
+(function(){var o=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');o.unobserve(e.target);}});},{threshold:0.08});document.querySelectorAll('.reveal,.reveal-up,.reveal-left,.reveal-right,.reveal-scale').forEach(function(el){o.observe(el);});})();
+(function(){var b=document.querySelector('.floating-chat-btn');if(!b||window.innerWidth<900)return;var r;document.addEventListener('mousemove',function(e){cancelAnimationFrame(r);r=requestAnimationFrame(function(){var rc=b.getBoundingClientRect(),cx=rc.left+rc.width/2,cy=rc.top+rc.height/2,dx=e.clientX-cx,dy=e.clientY-cy,d=Math.sqrt(dx*dx+dy*dy),f=(130-d)/130;b.style.transform=d<130?'translate('+(dx*f*0.3)+'px,'+(dy*f*0.3)+'px) scale('+(1+f*0.07)+')':'';});},{passive:true});})();
+</script>
 
 </body>
 </html>

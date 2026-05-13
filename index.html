@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }, { threshold: 0.12 });
-    document.querySelectorAll('.reveal, .reveal-up').forEach(el => revealObserver.observe(el));
+    document.querySelectorAll('.reveal, .reveal-up, .reveal-left, .reveal-right, .reveal-scale').forEach(el => revealObserver.observe(el));
 
     const tooltipItems = document.querySelectorAll('.themes-list li[data-tooltip]');
     const isTouchDevice = ('ontouchstart' in window) || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
 </section>
 
-<div class="scroll-banner" id="scrollBanner">
+<div class="scroll-banner reveal-scale" id="scrollBanner">
     <span class="quote-text">"Intentionalitet, taknemmelighed og mod er nogle af de mest effektive værktøjer vi har på rejsen mod at leve det liv vi drømmer om"</span>
     <hr class="quote-divider">
     <span class="quote-author">– Sofia S. Christensen</span>
@@ -147,14 +147,14 @@ document.addEventListener('DOMContentLoaded', function() {
 </section>
 
 <!-- PROBLEMSTILLINGER -->
-<section class="themes reveal">
-    <h2>Typiske problemstillinger</h2>
-    <div class="themes-intro">
+<section class="themes">
+    <h2 class="reveal-left">Typiske problemstillinger</h2>
+    <div class="themes-intro reveal-left" style="transition-delay:0.12s">
         <p>Jeg møder mennesker, som på forskellige måder har det svært i livet. Nogle kæmper med stress, angst, sorg eller depression, mens andre bare mærker, at noget ikke føles rigtigt længere. Mange føler sig overvældede, alene eller kørt fast og savner ro, klarhed og en følelse af retning.</p>
         <p>Hos mig er der plads til det hele. Du behøver ikke have styr på dine tanker eller kunne forklare præcis, hvad der er galt, før du søger hjælp. Sammen tager vi udgangspunkt i det, du står i lige nu, og finder frem til det, der giver mening for dig.</p>
 <p>Jeg lægger vægt på at møde dig med respekt, ærlighed og varme. Mit mål er at skabe et trygt rum, hvor du kan finde mere styrke, ro og mulighed for forandring i dit eget tempo.</p>
     </div>
-    <div class="themes-list">
+    <div class="themes-list reveal-right">
         <ul>
             <li data-tooltip="Stress opstår, når kravene overstiger dine ressourcer over tid. Vi arbejder med at forstå dine mønstre og genoprette balance og ro.">Stress</li>
             <li data-tooltip="Angst kan vise sig som uro, bekymringer eller undgåelse. Jeg hjælper dig med at forstå den og arbejde med den, så den fylder mindre.">Angst</li>
@@ -171,7 +171,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </section>
 
 <!-- INTRO -->
-<section class="about reveal">
+<section class="about reveal-scale">
     <h2>Evidensbaseret støtte i svære livssituationer</h2>
 
     <p>Jeg tager altid udgangspunkt i din situation og arbejder med metoder fra blandt andet ACT, MCT, CBT og den løsningsfokuserede tilgang. Det betyder, at vi sammen finder en måde at arbejde på, som giver mening for dig og det, du står i lige nu.</p>
@@ -189,10 +189,12 @@ document.addEventListener('DOMContentLoaded', function() {
 <footer>
     <div class="footer-content">
         <div class="footer-section">
-            <h3>Adresse</h3>
-            <p>Kiplings Allé 42<br>Søborg, 2860</p>
+            <h3>Klinikker</h3>
+            <p><strong>Rødovre</strong><br>Kiplings Allé 42<br>Søborg, 2860</p>
             <p>600 m fra Vangede station</p>
             <a href="https://www.google.com/maps/dir/?api=1&destination=Kiplings+All%C3%A9+42,+2860+S%C3%B8borg,+Danmark" target="_blank" rel="noopener" class="find-vej-link">Find Vej</a>
+            <p style="margin-top: 18px"><strong>Næstved</strong><br>Blegdamsvej 9<br>2100 København Ø</p>
+            <a href="https://www.google.com/maps/dir/?api=1&destination=Blegdamsvej+9,+2100+K%C3%B8benhavn+%C3%98,+Danmark" target="_blank" rel="noopener" class="find-vej-link">Find Vej</a>
         </div>
         <div class="footer-section">
             <h3>Kontakt mig</h3>
@@ -214,6 +216,117 @@ document.addEventListener('DOMContentLoaded', function() {
 </footer>
 
 <button class="floating-chat-btn" onclick="window.location.href='kontakt.html'">Book<br>Samtale</button>
+
+<script>
+/* === SCROLL PROGRESS BAR === */
+(function () {
+    var bar = document.createElement('div');
+    bar.style.cssText = 'position:fixed;top:0;left:0;height:3px;width:0;' +
+        'background:linear-gradient(90deg,#1a2847 0%,#c8a97e 100%);' +
+        'z-index:9999;pointer-events:none;transition:width 0.08s linear;';
+    document.body.insertBefore(bar, document.body.firstChild);
+    window.addEventListener('scroll', function () {
+        var pct = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight) * 100;
+        bar.style.width = Math.min(pct, 100) + '%';
+    }, { passive: true });
+})();
+
+/* === PARALLAX HERO IMAGE (desktop) === */
+(function () {
+    var heroRight = document.querySelector('.hero-right');
+    if (!heroRight || window.innerWidth < 900) return;
+    window.addEventListener('scroll', function () {
+        if (window.scrollY < 700) {
+            heroRight.style.transform = 'translateY(' + (window.scrollY * 0.07) + 'px)';
+        }
+    }, { passive: true });
+})();
+
+/* === 3D TILT ON OFFERING CARDS === */
+(function () {
+    if (window.innerWidth < 900) return;
+    document.querySelectorAll('.offering-item').forEach(function (card) {
+        card.addEventListener('mousemove', function (e) {
+            var r = card.getBoundingClientRect();
+            var x = (e.clientX - r.left) / r.width - 0.5;
+            var y = (e.clientY - r.top) / r.height - 0.5;
+            card.style.transition = 'box-shadow 0.1s ease, border-color 0.1s ease';
+            card.style.transform = 'perspective(700px) rotateX(' + (-y * 8) + 'deg) rotateY(' + (x * 8) + 'deg) translateY(-6px)';
+            card.style.boxShadow = '0 20px 44px rgba(26,40,71,0.14)';
+            card.style.borderColor = '#c8a97e';
+        });
+        card.addEventListener('mouseleave', function () {
+            card.style.transition = 'transform 0.55s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.35s ease, border-color 0.35s ease';
+            card.style.transform = '';
+            card.style.boxShadow = '';
+            card.style.borderColor = '';
+        });
+    });
+})();
+
+/* === MAGNETIC FLOATING BUTTON === */
+(function () {
+    var btn = document.querySelector('.floating-chat-btn');
+    if (!btn || window.innerWidth < 900) return;
+    var raf;
+    document.addEventListener('mousemove', function (e) {
+        cancelAnimationFrame(raf);
+        raf = requestAnimationFrame(function () {
+            var r = btn.getBoundingClientRect();
+            var cx = r.left + r.width / 2;
+            var cy = r.top + r.height / 2;
+            var dx = e.clientX - cx;
+            var dy = e.clientY - cy;
+            var dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < 130) {
+                var f = (130 - dist) / 130;
+                btn.style.transform = 'translate(' + (dx * f * 0.3) + 'px,' + (dy * f * 0.3) + 'px) scale(' + (1 + f * 0.07) + ')';
+            } else {
+                btn.style.transform = '';
+            }
+        });
+    }, { passive: true });
+})();
+</script>
+
+<script>
+(function () {
+    function fitHeroTitle() {
+        var h1 = document.querySelector('.hero-title');
+        if (!h1) return;
+        var maxWidth = h1.parentElement.clientWidth;
+
+        // Read only the title text node (not the subtitle span)
+        var titleText = '';
+        h1.childNodes.forEach(function (n) {
+            if (n.nodeType === 3) titleText += n.textContent;
+        });
+        titleText = titleText.trim();
+        if (!titleText) return;
+
+        // Measure text width using a hidden probe with the same font
+        var cs = window.getComputedStyle(h1);
+        var probe = document.createElement('span');
+        probe.style.cssText = 'position:absolute;top:-9999px;left:-9999px;visibility:hidden;' +
+            'white-space:nowrap;font-family:' + cs.fontFamily +
+            ';font-weight:700;letter-spacing:' + cs.letterSpacing + ';';
+        probe.textContent = titleText;
+        document.body.appendChild(probe);
+
+        var lo = 18, hi = 160;
+        while (hi - lo > 0.2) {
+            var mid = (lo + hi) / 2;
+            probe.style.fontSize = mid + 'px';
+            if (probe.scrollWidth <= maxWidth) { lo = mid; } else { hi = mid; }
+        }
+        document.body.removeChild(probe);
+        h1.style.fontSize = lo + 'px';
+    }
+
+    fitHeroTitle();
+    window.addEventListener('resize', fitHeroTitle);
+})();
+</script>
 
 </body>
 </html>
