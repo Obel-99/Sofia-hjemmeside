@@ -334,7 +334,7 @@ p{
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     margin-bottom: 110px;
-    margin-top: 60px;
+    margin-top: 0;
 }
 
 .offerings h2 {
