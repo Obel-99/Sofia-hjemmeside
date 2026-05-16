@@ -955,6 +955,22 @@ footer, footer * {
         padding: 20px;
     }
 
+    .offering-item .offering-header {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+
+    .offering-item .offering-header .offering-icon {
+        margin-bottom: 0;
+        flex-shrink: 0;
+    }
+
+    .offering-item .offering-header h3 {
+        margin-bottom: 0;
+    }
+
     .offering-item h3 {
         font-size: 18px;
     }
