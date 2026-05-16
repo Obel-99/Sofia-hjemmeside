@@ -14,7 +14,7 @@ body{
     font-family:'Montserrat', sans-serif;
     line-height:1.8;
     color:#3b2c22;
-    background:#f7f2ea;
+    background:#faf5ef;
     overflow-x: hidden;
 }
 
@@ -2069,8 +2069,7 @@ a[href^="mailto:"] {
 ::-webkit-scrollbar-thumb:hover { background: #b08a60; }
 
 body {
-    background: linear-gradient(170deg, #faf5ef 0%, #f7f2ea 60%, #f0e8db 100%);
-    background-attachment: fixed;
+    background: #faf5ef;
 }
 
 .hero-actions {
@@ -2296,7 +2295,7 @@ body {
     .scroll-banner { padding: 28px 16px; }
     .scroll-banner .quote-text { font-size: 1rem; }
     .hero-right { box-shadow: 0 12px 30px rgba(0,0,0,0.10); }
-    body { background-attachment: scroll; }
+    body { background: #faf5ef; }
 }
 
 /* ---- Mobile tooltip modal ---- */
