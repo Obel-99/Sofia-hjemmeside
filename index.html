@@ -68,20 +68,39 @@ document.addEventListener('DOMContentLoaded', function() {
     const isTouchDevice = ('ontouchstart' in window) || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
 
     if (isTouchDevice) {
+        const modal = document.getElementById('mobile-tooltip-modal');
+        const modalText = document.getElementById('mobile-tooltip-text');
+        const closeBtn = document.getElementById('mobile-tooltip-close');
+
         tooltipItems.forEach(item => {
             item.addEventListener('touchend', function(event) {
-                const isActive = item.classList.contains('active');
-                tooltipItems.forEach(i => i.classList.remove('active'));
-                if (!isActive) {
-                    item.classList.add('active');
+                if (window.innerWidth <= 768) {
+                    modalText.textContent = item.dataset.tooltip;
+                    modal.classList.add('visible');
+                } else {
+                    const isActive = item.classList.contains('active');
+                    tooltipItems.forEach(i => i.classList.remove('active'));
+                    if (!isActive) item.classList.add('active');
                 }
                 event.preventDefault();
                 event.stopPropagation();
             });
         });
 
-        document.addEventListener('touchend', function() {
-            tooltipItems.forEach(i => i.classList.remove('active'));
+        closeBtn.addEventListener('touchend', function(event) {
+            modal.classList.remove('visible');
+            event.preventDefault();
+            event.stopPropagation();
+        });
+        closeBtn.addEventListener('click', function() {
+            modal.classList.remove('visible');
+        });
+
+        document.addEventListener('touchend', function(event) {
+            if (!event.target.closest('#mobile-tooltip-modal') && !event.target.closest('.themes-list li')) {
+                tooltipItems.forEach(i => i.classList.remove('active'));
+                modal.classList.remove('visible');
+            }
         });
     }
 });
@@ -314,6 +333,11 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('resize', fitHeroTitle);
 })();
 </script>
+
+<div id="mobile-tooltip-modal" class="mobile-tooltip-modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <button id="mobile-tooltip-close" class="mobile-tooltip-close" aria-label="Luk">&#x2715;</button>
+    <p id="mobile-tooltip-text"></p>
+</div>
 
 </body>
 </html>
