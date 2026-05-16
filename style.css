@@ -204,14 +204,7 @@ p{
 }
 
 .hero-subtitle::before {
-    content: '';
-    display: inline-block;
-    width: 1.4em;
-    height: 2px;
-    background: #1a2847;
-    vertical-align: middle;
-    margin-right: 0.5em;
-    opacity: 0.55;
+    display: none;
 }
 
 .hero-left{
