@@ -2054,7 +2054,8 @@ footer, footer * {
 
 html {
     scroll-behavior: smooth;
-    background: #364556;
+    background: #f7f2ea;
+    overflow-x: hidden;
 }
 
 a[href^="tel:"],
