@@ -131,7 +131,7 @@ p{
     bottom:-4px;
     width:0%;
     height:2px;
-    background:#c8a97e;
+    background:#9a7055;
     transition:0.3s;
 }
 
@@ -230,7 +230,7 @@ p{
     margin: 15px;
     padding: 14px 18px;
     background: rgba(255, 255, 255, 0.85);
-    border-left: 4px solid #c8a97e;
+    border-left: 4px solid #9a7055;
     border-radius: 8px;
     color: #5b3f2b;
     font-family: 'Montserrat', sans-serif;
@@ -313,7 +313,7 @@ p{
 .quote{
     margin-top:25px;
     padding-left:15px;
-    border-left:3px solid #c8a97e;
+    border-left:3px solid #9a7055;
     font-family: 'Montserrat', sans-serif;
     color:#6b4f3b;
 }
@@ -747,7 +747,7 @@ footer, footer * {
 }
 
 .footer-section a:hover {
-    color: #c8a97e;
+    color: #9a7055;
     text-decoration: none;
 }
 
@@ -764,7 +764,7 @@ footer, footer * {
 
 .find-vej-link:hover {
     background: rgba(255,255,255,0.1);
-    border-color: #c8a97e;
+    border-color: #9a7055;
 }
 
 .footer-copyright {
@@ -2058,8 +2058,8 @@ a[href^="mailto:"] {
 
 ::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-track { background: #f7f2ea; }
-::-webkit-scrollbar-thumb { background: #c8a97e; border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: #b08a60; }
+::-webkit-scrollbar-thumb { background: #9a7055; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #7a5840; }
 
 body {
     background: #faf5ef;
@@ -2098,7 +2098,7 @@ body {
     margin: 0 auto;
 }
 .scroll-banner .quote-divider {
-    border-top-color: #c8a97e;
+    border-top-color: #9a7055;
     width: 30px;
     opacity: 0.6;
     margin: 16px auto;
@@ -2145,7 +2145,7 @@ body {
 .themes-list li.active {
     transform: translateX(6px);
     background: linear-gradient(135deg, #e8d8bd 0%, #f5ede0 100%);
-    border-color: #c8a97e;
+    border-color: #9a7055;
     color: #1a2847;
     font-weight: 600;
     box-shadow: 0 4px 14px rgba(200,169,126,0.22);
@@ -2210,7 +2210,7 @@ body {
 }
 .contact-form input:focus,
 .contact-form textarea:focus {
-    border-color: #c8a97e;
+    border-color: #9a7055;
     box-shadow: 0 0 0 3px rgba(200,169,126,0.18);
 }
 .contact-form textarea {
@@ -2454,9 +2454,9 @@ body {
     width: 13px;
     height: 13px;
     border-radius: 50%;
-    background: #c8a97e;
+    background: #9a7055;
     border: 2px solid #faf5ef;
-    box-shadow: 0 0 0 2px #c8a97e;
+    box-shadow: 0 0 0 2px #9a7055;
     z-index: 1;
 }
 
@@ -2469,7 +2469,7 @@ body {
 }
 
 .timeline-content:hover {
-    border-color: #c8a97e;
+    border-color: #9a7055;
 }
 
 .timeline-header {
@@ -2482,7 +2482,7 @@ body {
 .timeline-period {
     font-size: 12px;
     font-weight: 700;
-    color: #c8a97e;
+    color: #9a7055;
     letter-spacing: 0.04em;
 }
 
