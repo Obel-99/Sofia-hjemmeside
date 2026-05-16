@@ -2052,7 +2052,15 @@ footer, footer * {
    PREMIUM DESIGN ENHANCEMENTS
 ========================= */
 
-html { scroll-behavior: smooth; }
+html {
+    scroll-behavior: smooth;
+    background: #364556;
+}
+
+a[href^="tel:"],
+a[href^="mailto:"] {
+    text-decoration: underline;
+}
 
 ::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-track { background: #f7f2ea; }
