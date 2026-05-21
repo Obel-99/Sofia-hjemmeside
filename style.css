@@ -631,7 +631,7 @@ p{
 
 .about-page .about-image img {
     object-fit: cover;
-    object-position: center 20%;
+    object-position: center 70%;
     height: 600px;
     max-width: 100%;
 }
