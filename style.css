@@ -625,8 +625,15 @@ p{
 
 /* Kun Om-siden */
 .about-page .about-image {
-    align-self: start;       
-    margin-top: 20px;        
+    align-self: start;
+    margin-top: 20px;
+}
+
+.about-page .about-image img {
+    object-fit: cover;
+    object-position: center 20%;
+    height: 600px;
+    max-width: 100%;
 }
 
 .prices-text ul, .about-text ul, .contact-text ul {
