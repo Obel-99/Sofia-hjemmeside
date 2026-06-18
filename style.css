@@ -675,16 +675,7 @@ p{
     }
 
     .prices-page .prices-image {
-        flex-direction: row;
-        align-items: start;
-        gap: 12px;
         margin-top: 0;
-    }
-
-    .prices-page .prices-image img {
-        width: calc(50% - 6px);
-        max-width: none;
-        height: auto;
     }
 }
 
@@ -1073,15 +1064,7 @@ footer, footer * {
     }
 
     .prices-page .prices-image {
-        flex-direction: row;
-        align-items: start;
-        gap: 12px;
-    }
-
-    .prices-page .prices-image img {
-        width: calc(50% - 6px);
-        max-width: none;
-        height: auto;
+        margin-top: 0;
     }
 
     .prices-image img, .about-image img, .contact-image img {
