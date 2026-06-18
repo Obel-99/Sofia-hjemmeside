@@ -676,6 +676,7 @@ p{
 
     .prices-page .prices-image {
         flex-direction: row;
+        align-items: start;
         gap: 12px;
         margin-top: 0;
     }
@@ -683,6 +684,7 @@ p{
     .prices-page .prices-image img {
         width: calc(50% - 6px);
         max-width: none;
+        height: auto;
     }
 }
 
@@ -1072,12 +1074,14 @@ footer, footer * {
 
     .prices-page .prices-image {
         flex-direction: row;
+        align-items: start;
         gap: 12px;
     }
 
     .prices-page .prices-image img {
         width: calc(50% - 6px);
         max-width: none;
+        height: auto;
     }
 
     .prices-image img, .about-image img, .contact-image img {
