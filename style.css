@@ -634,6 +634,12 @@ p{
     max-width: 100%;
 }
 
+.prices-page .prices-image img:first-child {
+    max-height: 350px;
+    object-fit: cover;
+    object-position: center bottom;
+}
+
 /* Kun Om-siden */
 .about-page .about-image {
     align-self: start;
