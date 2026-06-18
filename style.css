@@ -686,14 +686,16 @@ p{
 }
 
 /* Ændrer farven på email og telefon links på kontakt-siden */
-.contact-text a {
-    color: #5b3f2b;       /* varm brun/beige som resten af teksten */
-    text-decoration: none; /* fjerner understregning */
+.contact-text a,
+.prices-text a {
+    color: #5b3f2b;
+    text-decoration: none;
 }
 
-.contact-text a:hover {
-    text-decoration: underline; /* understregning kun ved hover */
-    color: #3b2c22;             /* lidt mørkere farve ved hover */
+.contact-text a:hover,
+.prices-text a:hover {
+    text-decoration: underline;
+    color: #3b2c22;
 }
 
 /* =========================
