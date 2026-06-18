@@ -617,10 +617,21 @@ p{
     box-shadow:0 15px 30px rgba(0,0,0,0.08);
 }
 
+.prices-page .prices-grid {
+    grid-template-columns: 3fr 2fr;
+}
+
 /* Kun Priser-siden */
 .prices-page .prices-image {
-    align-self: start;       /* placerer billedet i toppen af cellen */
-    margin-top: 20px;        /* skubber billedet lidt nedad */
+    align-self: start;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.prices-page .prices-image img {
+    max-width: 100%;
 }
 
 /* Kun Om-siden */
@@ -661,6 +672,17 @@ p{
 
     .prices-text, .about-text, .contact-text {
         max-width:none;
+    }
+
+    .prices-page .prices-image {
+        flex-direction: row;
+        gap: 12px;
+        margin-top: 0;
+    }
+
+    .prices-page .prices-image img {
+        width: calc(50% - 6px);
+        max-width: none;
     }
 }
 
@@ -1046,6 +1068,16 @@ footer, footer * {
     .about-page .about-image,
     .contact-page .contact-image {
         margin-top: 0;
+    }
+
+    .prices-page .prices-image {
+        flex-direction: row;
+        gap: 12px;
+    }
+
+    .prices-page .prices-image img {
+        width: calc(50% - 6px);
+        max-width: none;
     }
 
     .prices-image img, .about-image img, .contact-image img {
