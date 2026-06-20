@@ -611,7 +611,7 @@ p{
 
 .prices-image img, .about-image img, .contact-image img {
     width:100%;
-    max-width:520px;
+    max-width:420px;
     height:auto;
     border-radius:12px;
     box-shadow:0 15px 30px rgba(0,0,0,0.08);
@@ -1076,8 +1076,10 @@ footer, footer * {
     }
 
     .prices-image img, .about-image img, .contact-image img {
-        max-width: 100%;
+        max-width: 85%;
         height: auto;
+        margin: 0 auto;
+        display: block;
     }
 
     .prices-page h1,

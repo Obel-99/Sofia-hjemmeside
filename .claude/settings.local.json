@@ -2,7 +2,24 @@
   "permissions": {
     "allow": [
       "Bash(git commit *)",
-      "Bash(git push *)"
+      "Bash(git push *)",
+      "Bash(git mv *)",
+      "Bash(git add *)",
+      "Bash(git config *)"
+    ]
+  },
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "git push 2>/dev/null || true",
+            "shell": "bash",
+            "timeout": 30
+          }
+        ]
+      }
     ]
   }
 }
